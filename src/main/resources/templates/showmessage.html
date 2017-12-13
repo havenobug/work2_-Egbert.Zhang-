@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="container">
+<div class="with:80%" >
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th width="105">标题</th>
+        <th width="105">正文</th>
+        <th width="105">日期</th>
+        <th width="105">作者</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="message:${messages}">
+        <td width="105"   th:text="${message.title}">标题</td>
+        <td width="105"  th:text="${message.artical}">文章</td>
+        <td width="105"  th:text="${message.reporttime}">日期</td>
+        <td width="105"  th:text="${message.username}">作者</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<table class="table table-hover"style="position: absolute;top: 30%;">
+    <thead>
+    <tr>
+        <th width="105">评论</th>
+        <th width="105">评论人</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="comment:${comment}">
+        <td width="105"   th:text="${comment.comment}"></td>
+        <td width="105"  th:text="${comment.username}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <form action="putCom"method="post">
+    <input type="text" id="comment" name="comment">
+        <input id="put" type="submit" value="评论">
+    </form>
+</div>
+</body>
+</html>

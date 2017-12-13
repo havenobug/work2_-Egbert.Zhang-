@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+你好，<div th:text="${session.username}" name="username"></div>
+<div class="with:80%" style="position: absolute;top: 10%;">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th width="105">标题</th>
+            <th width="105">artical</th>
+            <th width="105">username</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="message:${messages}">
+            <td width="105"   th:text="${message.title}">标题</td>
+            <td width="105"  th:text="${message.artical}">文章</td>
+            <td width="105"  th:text="${message.username}">作者</td>
+            <td><a th:href="@{/addmyedit(id=${message.id})}">edit</a></td>
+            <td><a th:href="@{/deletemymessage(id=${message.id})}">delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a href="addmymessage.html">添加</a>
+</body>
+</html>

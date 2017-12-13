@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+    <title>Title</title>
+</head>
+<body>
+
+你好，<div th:text="${session.username}"></div>
+
+<a href="mymessage.html">查看我发表的</a>
+<div class="with:80%" style="position: absolute;top: 10%;">
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th width="105">标题</th>
+        <th width="105">artical</th>
+        <th width="105">作者</th>
+        <th width="105">发表时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="message:${messages}">
+        <td width="105"   th:text="${message.title}"></td>
+        <td width="105"  th:text="${message.artical}"></td>
+        <td width="105"  th:text="${message.username}"></td>
+        <td width="105"  th:text="${message.reporttime}"></td>
+        <td><a th:href="@{/showmessage(id=${message.id})}">查看详情</a></td>
+        <td><a th:href="@{/delete(id=${message.id})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
