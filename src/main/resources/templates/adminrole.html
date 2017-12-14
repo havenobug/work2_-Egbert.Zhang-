@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/adminrole}" th:object="${user}"  method="post">
+    <input type="text"  name="role"  id="role" placeholder="role"/>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" value="Submit" class="btn btn-info" />
+        </div>
+
+    </div>
+</form>
+</body>
+</html>

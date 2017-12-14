@@ -8,6 +8,7 @@
 <body>
 
 你好，<div th:text="${session.username}"></div>
+<a href="login.html">退出登录</a>
 
 <a href="mymessage.html">查看我发表的</a>
 <div class="with:80%" style="position: absolute;top: 10%;">
@@ -15,19 +16,25 @@
     <thead>
     <tr>
         <th width="105">标题</th>
-        <th width="105">artical</th>
+        <th width="105">正文</th>
         <th width="105">作者</th>
+        <th width="105">评论数</th>
         <th width="105">发表时间</th>
+        <th width="105">最后评论时间</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="message:${messages}">
-        <td width="105"   th:text="${message.title}"></td>
-        <td width="105"  th:text="${message.artical}"></td>
-        <td width="105"  th:text="${message.username}"></td>
-        <td width="105"  th:text="${message.reporttime}"></td>
+        <td width="120"   th:text="${message.title}"></td>
+        <td width="120"  th:text="${message.artical}"></td>
+        <td width="120"  th:text="${message.username}"></td>
+        <td width="120"  th:text="${message.commentnum}"></td>
+        <td width="105"  th:text="${#dates.format(message.reporttime,'yyyy-MM-dd hh:mm:ss')}"></td>
+        <td width="105"  th:text="${#dates.format(message.lastdate,'yyyy-MM-dd hh:mm:ss')}"></td>
+        <!--<td width="120"  th:text="${message.lastdate}"></td>-->
         <td><a th:href="@{/showmessage(id=${message.id})}">查看详情</a></td>
         <td><a th:href="@{/delete(id=${message.id})}">delete</a></td>
+        <td><a th:href="@{/hometoedit(id=${message.id})}">edit</a></td>
     </tr>
     </tbody>
 </table>

@@ -9,9 +9,10 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
     //显示评论
-    List<Comment> findCom(@Param("id")int id);
+    List<Comment> findCom(@Param("id") int id);
     //发表评论
-    void putCom(@Param("com")Comment com);
+    void putCom(@Param("com") Comment com);
 //    void putCom(@Param("Comment")String comment,@Param("id")int id,@Param("username")String username);
-
+    //评论数加1
+    void commentnumAdd(@Param("id")Integer id);
 }

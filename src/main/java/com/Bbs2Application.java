@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Bbs1Application {
+public class Bbs2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Bbs1Application.class, args);
+		SpringApplication.run(Bbs2Application.class, args);
 	}
 }

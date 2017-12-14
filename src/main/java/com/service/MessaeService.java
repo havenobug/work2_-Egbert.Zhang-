@@ -10,9 +10,9 @@ public interface MessaeService {
 
     List<Message> findMy(String username);
 
-    void myedit(int id);
+    void myedit(Integer id,String title,String artical);
 
-    void addmy(String title, String artical, String username, Date reporttime);
+    void addmy(String title, String artical, String username, Date reporttime,Date lastdate);
 
     void deletemes(int id);
 

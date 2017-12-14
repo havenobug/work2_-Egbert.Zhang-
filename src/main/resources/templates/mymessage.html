@@ -21,12 +21,14 @@
             <td width="105"   th:text="${message.title}">标题</td>
             <td width="105"  th:text="${message.artical}">文章</td>
             <td width="105"  th:text="${message.username}">作者</td>
-            <td><a th:href="@{/addmyedit(id=${message.id})}">edit</a></td>
+            <td><a th:href="@{/toEdit(id=${message.id})}">edit</a></td>
+            <!--<td><a href="editmymessage.html">edit</a> </td>-->
             <td><a th:href="@{/deletemymessage(id=${message.id})}">delete</a></td>
         </tr>
         </tbody>
     </table>
 </div>
 <a href="addmymessage.html">添加</a>
+<a href="message.html">返回查看所有消息</a>
 </body>
 </html>

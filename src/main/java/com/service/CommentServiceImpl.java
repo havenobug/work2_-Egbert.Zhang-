@@ -9,7 +9,7 @@ import java.util.List;
 
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @Service("commentService")
-public class CommentServiceImpl implements CommentService{
+public class CommentServiceImpl implements CommentService {
     @Autowired
     CommentMapper commentMapper;
     @Override
@@ -24,6 +24,11 @@ public class CommentServiceImpl implements CommentService{
         com.setCid(cid);
         com.setUsername(username);
         commentMapper.putCom(com);
+    }
+
+    @Override
+    public void commentnumAdd(int id) {
+        commentMapper.commentnumAdd(id);
     }
 
 

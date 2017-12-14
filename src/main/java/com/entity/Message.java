@@ -8,6 +8,8 @@ public class Message {
         private String artical;
         private String username;
         private Date reporttime;
+        private Integer commentnum;
+        private Date lastdate;
     public Integer getId() {
         return id;
     }
@@ -46,5 +48,21 @@ public class Message {
 
     public void setReporttime(Date reporttime) {
         this.reporttime = reporttime;
+    }
+
+    public Integer getCommentnum() {
+        return commentnum;
+    }
+
+    public void setCommentnum(Integer commentnum) {
+        this.commentnum = commentnum;
+    }
+
+    public Date getLastdate() {
+        return lastdate;
+    }
+
+    public void setLastdate(Date lastdate) {
+        this.lastdate = lastdate;
     }
 }

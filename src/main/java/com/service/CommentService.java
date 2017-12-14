@@ -7,5 +7,7 @@ import java.util.List;
 public interface CommentService {
     List<Comment> findCom(int id);
 
-    void putCom(String comment,Integer cid,String username);
+    void putCom(String comment, Integer cid, String username);
+
+    void commentnumAdd(int id);
 }

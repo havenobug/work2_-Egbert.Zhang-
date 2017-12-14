@@ -10,4 +10,9 @@
         VALUE(#{com.comment},#{com.cid},#{com.username});
     </update>
 
+    <update id="commentnumAdd" parameterType="int">
+        UPDATE messages set commentnum=commentnum+1,
+        lastdate =now()
+        WHERE id = #{id};
+    </update>
 </mapper>

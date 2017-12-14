@@ -5,6 +5,8 @@ import com.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -24,5 +26,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public void register(String username, String password) {
         userMapper.register(username,password);
+    }
+
+    @Override
+    public List<User> findAllUser() {
+        return userMapper.findAllUser();
+    }
+
+    @Override
+    public User findRole(String username) {
+        return userMapper.findByRole(username);
+    }
+
+    @Override
+    public void editRole(Integer id, Integer role) {
+        userMapper.editRole(id,role);
     }
 }

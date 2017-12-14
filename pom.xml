@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com</groupId>
-	<artifactId>bbs1</artifactId>
+	<artifactId>bbs2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>bbs1</name>
+	<name>bbs2</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -29,12 +29,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
-				<!-- 不严格html -->
-        		<dependency>
-        			<groupId>net.sourceforge.nekohtml</groupId>
-        			<artifactId>nekohtml</artifactId>
-        			<version>1.9.22</version>
-        		</dependency>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -44,7 +38,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
+<!-- 不严格html -->
+        		<dependency>
+        			<groupId>net.sourceforge.nekohtml</groupId>
+        			<artifactId>nekohtml</artifactId>
+        			<version>1.9.22</version>
+        		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -64,15 +63,15 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-				<resources>
-        		<resource>
-        			<directory>src/main/java</directory>
-        			<includes>
-        				<include>**/*.xml</include>
-        			</includes>
-        		</resource>
+		<resources>
+                		<resource>
+                			<directory>src/main/java</directory>
+                			<includes>
+                				<include>**/*.xml</include>
+                			</includes>
+                		</resource>
 
-        	</resources>
+                	</resources>
 	</build>
 
 

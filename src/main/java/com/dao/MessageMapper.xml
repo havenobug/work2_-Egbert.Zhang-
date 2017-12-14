@@ -15,13 +15,13 @@
         </select>
 
             <update id="myedit" parameterType="com.entity.Message">
-                INSERT INTO messages(title,artical) VALUES(#{title},#{artical})
+                update messages set title=#{title},artical=#{artical}
                  WHERE id = #{id}
             </update>
 
             <update id="addmy" parameterType="com.entity.Message">
-            INSERT INTO messages(title,artical,username,reporttime)
-            VALUES(#{title},#{artical},#{username},#{reporttime})
+            INSERT INTO messages(title,artical,username,reporttime,lastdate)
+            VALUES(#{title},#{artical},#{username},#{reporttime},#{lastdate})
             </update>
 
             <delete id="deletemes" parameterType="int">

@@ -1,6 +1,7 @@
 package com.service;
 
 import com.dao.MessageMapper;
+import com.entity.Comment;
 import com.entity.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,13 +24,14 @@ public class MessageServiceImpl implements MessaeService {
     }
 
     @Override
-    public void myedit(int id) {
-        messageMapper.myedit(id);
+    public void myedit(Integer id, String title, String artical) {
+        messageMapper.myedit(id,title,artical);
     }
 
+
     @Override
-    public void addmy(String title, String artical, String username, Date reporttime) {
-        messageMapper.addmy(title,artical,username,reporttime);
+    public void addmy(String title, String artical, String username, Date reporttime,Date lasttime) {
+        messageMapper.addmy(title,artical,username,reporttime,lasttime);
     }
 
     @Override

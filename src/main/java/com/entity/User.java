@@ -8,6 +8,7 @@ public class User {
     private String password;
     private Date logindate;
     private Integer failnum;
+    private Integer role;
     public String getPassword() {
         return password;
     }
@@ -46,5 +47,13 @@ public class User {
 
     public void setFailnum(Integer failnum) {
         this.failnum = failnum;
+    }
+
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
     }
 }

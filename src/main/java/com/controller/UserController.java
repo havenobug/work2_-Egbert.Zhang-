@@ -4,9 +4,11 @@ import com.entity.User;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 @RequestMapping("")
@@ -26,6 +28,9 @@ public class UserController {
 
 
 
+
+
+
     @RequestMapping("/addlogin")
     public String loginUser(HttpServletRequest request){
         String username = request.getParameter("username");
@@ -33,7 +38,10 @@ public class UserController {
         request.getSession().setAttribute("username",username);
         String str = "";
         User user = userService.findUserByUsername(username);
-        if (user!=null){
+        if (username.equals("admin")&&password.equals("admin")){
+            return "redirect:/adminmessage";
+        }
+        else if (user!=null){
             User user1 = userService.findUserByPassword(password);
             if (user1!=null){
                 return "redirect:/message";

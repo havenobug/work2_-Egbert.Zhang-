@@ -19,9 +19,23 @@
         <select id="findByPassword" parameterType="String" resultMap="TopicResultMap">
             select * from users WHERE password=#{password}
         </select>
+        <select id="findAllUser" resultType="com.entity.User">
+                SELECT * FROM users;
+        </select>
 
     <update id="register" parameterType="com.entity.User">
         INSERT INTO users(username,password)
          VALUES(#{username},#{password})
     </update>
+
+            <select id="findByRole" resultType="com.entity.User">
+                    SELECT * FROM users
+                    WHERE username=#{username};
+            </select>
+
+                        <update id="editRole" parameterType="com.entity.User">
+                            update users set role=#{role}
+                             WHERE id = #{id}
+                        </update>
+
 </mapper>

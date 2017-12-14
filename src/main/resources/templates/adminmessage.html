@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="with:80%" style="position: absolute;top: 10%;left: 30%;">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th width="105">标题</th>
+            <th width="105">正文</th>
+            <th width="105">作者</th>
+            <th width="105">评论数</th>
+            <th width="105">发表时间</th>
+            <th width="105">最后评论时间</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="message:${messages}">
+            <td width="105"   th:text="${message.title}"></td>
+            <td width="105"  th:text="${message.artical}"></td>
+            <td width="105"  th:text="${message.username}"></td>
+            <td width="105"  th:text="${message.commentnum}"></td>
+            <td width="105"  th:text="${#dates.format(message.reporttime,'yyyy-MM-dd hh:mm:ss')}"></td>
+            <td width="105"  th:text="${#dates.format(message.lastdate,'yyyy-MM-dd hh:mm:ss')}"></td>
+            <td><a th:href="@{/admintoedit(id=${message.id})}">edit</a></td>
+            <td><a th:href="@{/delete(id=${message.id})}">delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="with:80%" style="position: absolute;top: 50%;left: 30%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th width="105">用户</th>
+            <th width="105">密码</th>
+            <th width="105">角色&&权限(0代表没有权限，1代表可以删除，2代表可以编辑，3代表删除和编辑)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user:${users}">
+            <td width="105"   th:text="${user.username}"></td>
+            <td width="105"  th:text="${user.password}"></td>
+            <td width="105"  th:text="${user.role}"></td>
+            <td><a th:href="@{/admintorole(id=${user.id})}">edit</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
