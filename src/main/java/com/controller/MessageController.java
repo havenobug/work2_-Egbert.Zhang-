@@ -6,8 +6,6 @@ import com.entity.User;
 import com.service.CommentService;
 import com.service.MessaeService;
 import com.service.UserService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,7 +61,7 @@ public class MessageController {
     //显示我自己的消息
     @RequestMapping({"/mymessage"})
     public String showmymessage(HttpServletRequest request,String username,Model model){
-//        List<Message> messages = messageService.
+        //获取username 放到session中去 通过username 查找相对应的message
         username =(String)request.getSession().getAttribute("username");
         List<Message> messages = messageService.findMy(username);
         model.addAttribute("messages",messages);
@@ -73,6 +71,7 @@ public class MessageController {
     //查看消息的详情页面
     @RequestMapping({"/showmessage"})
     public String showmes(Model model,Integer id,HttpServletRequest request){
+        //获取message中的id 通过id查找信息 显示出来
         request.getSession().setAttribute("id",id);
         Message messages = messageService.findMessById(id);
         model.addAttribute("messages" ,messages);
@@ -154,7 +153,7 @@ public class MessageController {
         return "redirect:/adminmessage";
     }
 
-    //首页修改信息
+    //首页修改信息 并且判断当前用户的角色 2代表可以编辑文章，3代表可以删除别人的文章和编辑
     @RequestMapping("/hometoedit")
     public String hometoedit(Integer id,HttpServletRequest request,HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=gb2312");
@@ -181,7 +180,7 @@ public class MessageController {
         return "redirect:/message";
     }
 
-    //管理员基于权限
+    //管理员给予用户权限
     @RequestMapping("/admintorole")
     public String admintorole(Integer id,HttpServletRequest request){
         request.getSession().setAttribute("id3",id);

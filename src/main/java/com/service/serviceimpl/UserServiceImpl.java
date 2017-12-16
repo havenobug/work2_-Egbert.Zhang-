@@ -1,7 +1,8 @@
-package com.service;
+package com.service.serviceimpl;
 
 import com.dao.UserMapper;
 import com.entity.User;
+import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

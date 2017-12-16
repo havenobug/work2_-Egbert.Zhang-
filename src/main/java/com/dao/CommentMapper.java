@@ -14,5 +14,5 @@ public interface CommentMapper {
     void putCom(@Param("com") Comment com);
 //    void putCom(@Param("Comment")String comment,@Param("id")int id,@Param("username")String username);
     //评论数加1
-    void commentnumAdd(@Param("id")Integer id);
+    void commentnumAdd(@Param("id") Integer id);
 }

@@ -1,8 +1,8 @@
-package com.service;
+package com.service.serviceimpl;
 
 import com.dao.MessageMapper;
-import com.entity.Comment;
 import com.entity.Message;
+import com.service.MessaeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

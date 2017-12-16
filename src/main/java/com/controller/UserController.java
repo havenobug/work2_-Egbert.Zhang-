@@ -4,11 +4,9 @@ import com.entity.User;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 @Controller
 @RequestMapping("")
@@ -27,10 +25,7 @@ public class UserController {
     }
 
 
-
-
-
-
+    //登陆方法
     @RequestMapping("/addlogin")
     public String loginUser(HttpServletRequest request){
         String username = request.getParameter("username");

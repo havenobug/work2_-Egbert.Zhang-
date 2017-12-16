@@ -14,10 +14,10 @@ public interface MessageMapper {
         List<Message> findMy(@Param("username") String username);
 
         //修改自己的信息
-        void myedit(@Param("id")Integer id,@Param("title")String title,@Param("artical")String artical);
+        void myedit(@Param("id") Integer id, @Param("title") String title, @Param("artical") String artical);
 
         //新增自己的文章
-        void addmy(@Param("title") String title, @Param("artical") String artical, @Param("username") String username, @Param("reporttime") Date repottime,@Param("lastdate")Date lastdate);
+        void addmy(@Param("title") String title, @Param("artical") String artical, @Param("username") String username, @Param("reporttime") Date repottime, @Param("lastdate") Date lastdate);
 
         //删除自己的文章
         void deletemes(@Param("id") Integer id);

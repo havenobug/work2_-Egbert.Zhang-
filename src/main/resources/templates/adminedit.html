@@ -7,8 +7,8 @@
 <body>
 <div class="with:80%">
     <form th:action="@{/adminedit}" th:object="${message}"  method="post">
-        <input type="text"  name="title"  id="title" placeholder="message"/>
-        <input type="text"  name="artical"  id="artical"  placeholder="message"/>
+        <input type="text"  name="title"  id="title" placeholder="请输入你要修改的标题"/>
+        <input type="text"  name="artical"  id="artical"  placeholder="请输入你要修改的正文"/>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" value="Submit" class="btn btn-info" />

@@ -27,7 +27,7 @@
             <td width="105"  th:text="${#dates.format(message.reporttime,'yyyy-MM-dd hh:mm:ss')}"></td>
             <td width="105"  th:text="${#dates.format(message.lastdate,'yyyy-MM-dd hh:mm:ss')}"></td>
             <td><a th:href="@{/admintoedit(id=${message.id})}">edit</a></td>
-            <td><a th:href="@{/delete(id=${message.id})}">delete</a></td>
+            <td><a th:href="@{/admindelete(id=${message.id})}">delete</a></td>
         </tr>
         </tbody>
     </table>

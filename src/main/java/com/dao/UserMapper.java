@@ -15,5 +15,5 @@ public interface UserMapper {
     List<User> findAllUser();
     User findByRole(@Param("username") String username);
 
-    void editRole(@Param("id") Integer id,@Param("role")Integer role);
+    void editRole(@Param("id") Integer id, @Param("role") Integer role);
 }
