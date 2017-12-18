@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+    form{
+    width: 300px;
+    height: 200px;
+    margin:0 auto;
+    padding-top: 10%;
+    }
+    input{
+    margin-bottom: 10px;
+    }
+    </style>
 </head>
 <body>
 <form th:action="@{/homeedit}" th:object="${message}"  method="post">
-    <input type="text"  name="title"  id="title" placeholder="message"/>
-    <input type="text"  name="artical"  id="artical"  placeholder="message"/>
+    <input type="text"  name="title"  id="title" placeholder="修改后的标题"/>
+    <input type="text"  name="artical"  id="artical"  placeholder="修改后的正文"/>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <input type="submit" value="Submit" class="btn btn-info" />

@@ -4,11 +4,17 @@ import java.util.Date;
 
 public class User {
     private Integer id;
+    //用户姓名
     private String username;
+    //密码
     private String password;
+    //登陆时间
     private Date logindate;
+    //失败次数
     private Integer failnum;
+    //用户的角色权限
     private Integer role;
+
     public String getPassword() {
         return password;
     }

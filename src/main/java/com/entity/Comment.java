@@ -1,8 +1,14 @@
 package com.entity;
 
 public class Comment {
+
     private int id;
+    //cid与message表中的id相匹配
     private int cid;
+    //username表示评论人，从session从取得
+    private String username;
+    //评论内容
+    private String comment;
 
     public int getId() {
         return id;
@@ -29,8 +35,7 @@ public class Comment {
         this.comment = comment;
     }
 
-    private String username;
-    private String comment;
+
 
     public int getCid() {
         return cid;

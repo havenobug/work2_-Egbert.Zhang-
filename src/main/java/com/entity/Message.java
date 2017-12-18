@@ -4,11 +4,17 @@ import java.util.Date;
 
 public class Message {
         private Integer id;
+        //标题
         private String title;
+        //正文
         private String artical;
+        //用户名字
         private String username;
+        //发表文章时间
         private Date reporttime;
+        //评论数
         private Integer commentnum;
+        //最后评论时间
         private Date lastdate;
     public Integer getId() {
         return id;

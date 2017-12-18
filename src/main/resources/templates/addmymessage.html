@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+<style>
+    form{
+        width:200px;
+        height: 600px;
+        margin: 0 auto;
+        padding-top: 10%;
+        margin-left: 30%;
+    }
+    input{
+        margin-bottom: 10px;
+    }
+</style>
 <body>
+<a href="mymessage.html">查看我的</a>
 <form method="post" action="addmessage">
-    标题<input type="text" name="title" placeholder="请输入标题">
-    文章<input type="text" name="artical" placeholder="请输入正文">
+    <span>发布一条动态</span></br>
+    <input type="text" name="title" placeholder="请输入标题"></br>
+    <input type="text" name="artical" placeholder="请输入正文"style="width: 200px;height: 100px;text-align: start"></br>
     <input type="submit"value="ok">
 </form>
-<a href="mymessage.html">查看我的</a>
+
 </body>
 </html>
